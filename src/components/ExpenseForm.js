@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ExpenseChart() {
+function ExpenseForm() {
     return (
         <div>
             <form className = 'expense-form'>
@@ -19,4 +19,4 @@ function ExpenseChart() {
     )
 }
 
-export default ExpenseChart
+export default ExpenseForm

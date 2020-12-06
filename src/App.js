@@ -1,13 +1,16 @@
 import React from 'react'
-import ExpenseChart from './ExpenseChart';
-import Header from './Header'
+import ExpenseForm from './components/ExpenseForm';
+import Header from './components/Header'
+import ExpenseTable from './components/ExpenseTable'
+
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <ExpenseChart />
+      <ExpenseForm />
+      <ExpenseTable />
     </div>
   );
 }
