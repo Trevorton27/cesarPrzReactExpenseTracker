@@ -13,7 +13,7 @@ function ExpenseChart() {
                 </select>
                 <input type='date'></input>
                 <input type='text' placeholder= 'Where did you buy it?'></input>
-                
+                <input type='submit'></input>
             </form>
         </div>
     )
