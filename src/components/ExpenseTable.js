@@ -16,7 +16,12 @@ function ExpenseTable() {
                 </tr>
                 </thead>
                 <tbody>
-                    <tr>dummy data</tr>
+                    <tr>
+                        <td>dummy data</td>
+                        <td>dummy data</td>
+                        <td>dummy data</td>
+                        <td>dummy data</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
