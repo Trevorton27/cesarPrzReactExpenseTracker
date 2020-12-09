@@ -2,8 +2,14 @@
   text-align: center;
 }
 
-.tableHeader {
-  color: #456268;
+.table {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+}
+
+.tableHeader {
+  text-align: center;
+  border: solid;
+  color: #456268;
+  width: 50%;
 }

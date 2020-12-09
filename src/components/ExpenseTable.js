@@ -4,9 +4,9 @@ import React from 'react'
 function ExpenseTable() {
 
     return (
-        <div>
-            <table>
-                <thead className='tableHeader'>
+        <div className='table'>
+            <table className='tableHeader'>
+                <thead>
                 <tr>
                     <th>What did you buy?</th>
                     <th>Where did you buy it?</th>
