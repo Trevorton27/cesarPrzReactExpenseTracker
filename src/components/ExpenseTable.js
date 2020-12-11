@@ -8,14 +8,15 @@ function ExpenseTable() {
             <table className='table-data'>
                 <thead>
                 <tr>
-                    <th>What did you buy?</th>
-                    <th>Where did you buy it?</th>
-                    <th>How much did you spend?</th>
-                    <th>When was your purchase?</th>
+                    <th id='itemPurchased'>What did you buy?</th>
+                    <th id='placeOfPurchase'>Where did you buy it?</th>
+                    <th id='amountSpent' >How much did you spend?</th>
+                    <th id='dateOfPurchase' >When was your purchase?</th>
                     <th>Delete Expense</th>
                 </tr>
                 </thead>
                 <tbody>
+                    <tr id='table-data'></tr>
                     <tr>
                         <td>dummy data</td>
                         <td>dummy data</td>
