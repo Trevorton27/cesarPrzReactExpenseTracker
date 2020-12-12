@@ -44,7 +44,7 @@ handleChange(e) {
             <div>
             <form className = 'expense-form'>
                 <select id='payment-type' style={{borderRadius: 5}} >
-                    <option value='' />
+                    <option value=''>Select Payment Type</option>
                     <option value='cash'>Cash</option>
                     <option value='credit card'>Credit Card</option>
                     <option value='crypto'>Crypto</option>
