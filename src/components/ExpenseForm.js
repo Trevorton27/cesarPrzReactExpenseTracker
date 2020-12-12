@@ -1,15 +1,5 @@
 import React from 'react'
 
-// let submitExpense = document.getElementById('submit-expense')
-
-// function handleClick() {
-//     submitExpense.addEventListener((e) => {
-//     e.preventDefault();
-//     //let place = document.getElementById('itemPurchased').value;
-//     })
-//     console.log('clicked')
-// }
-
 class ExpenseForm extends React.Component {
     constructor(props) {
         super(props)
@@ -30,7 +20,23 @@ handleChange(e) {
     const amountSpent = document.getElementById('amount-spent').value;
     const datePurchased = document.getElementById('date-purchased').value;
     e.preventDefault()
-    console.log(paymentType, itemBought, purchaseLocation, amountSpent, datePurchased)
+
+    if(paymentType === '') {
+        console.log('enter payment type')
+    } else if(paymentType === '') {
+        console.log('enter expense')
+    } else if(itemBought === '') {
+        console.log('enter item bought')
+    } else if(purchaseLocation === '') {
+        console.log('enter location')
+    } else if(amountSpent === '') {
+        console.log('enter cost')
+    } else if(datePurchased === '') {
+        console.log('enter date')
+    } else {
+        console.log(paymentType, itemBought, purchaseLocation, amountSpent, datePurchased)
+    }
+
 }
 
     render() {
@@ -38,6 +44,7 @@ handleChange(e) {
             <div>
             <form className = 'expense-form'>
                 <select id='payment-type' style={{borderRadius: 5}} >
+                    <option value='' />
                     <option value='cash'>Cash</option>
                     <option value='credit card'>Credit Card</option>
                     <option value='crypto'>Crypto</option>
