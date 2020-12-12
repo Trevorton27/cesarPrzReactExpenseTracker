@@ -9,12 +9,15 @@ function handleClick() {
     })
     console.log('clicked')
 }
-    
-    
-function ExpenseForm() {
 
-    return (
-        <div>
+class ExpenseForm extends React.Component {
+    // constructor() {
+    //     super()
+
+    // }
+    render() {
+        return (
+            <div>
             <form className = 'expense-form'>
                 <select style={{borderRadius: 5}} >
                     <option value='cash'>Cash</option>
@@ -27,7 +30,8 @@ function ExpenseForm() {
                 <input id='submit-expense' style={{width: 100, borderRadius: 5}} type='submit' onClick={handleClick} ></input>
             </form>
         </div>
-    )
+        )
+    }
 }
 
 export default ExpenseForm
