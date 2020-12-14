@@ -8,15 +8,14 @@ class ExpenseForm extends React.Component {
         itemBought: '',
         payLocation: '',
         amountSpent: '',
-        date: '',
+        dateOfPurchase: '',
     }
     this.handleChange = this.handleChange.bind(this);
 
 }
 handleChange(e) {
     this.setState({
-        itemBought: e.target.value,
-        payLocation: e.target.value
+        [e.target.name]: e.target.value,
     })
 }
 
@@ -32,8 +31,8 @@ handleChange(e) {
                     <option value='credit card'>Credit Card</option>
                     <option value='crypto'>Crypto</option>
                 </select>
-                <input name={this.itemBought} style={{width: 200, borderRadius: 5,}} type= 'text' placeholder='What did you buy?' onChange={this.handleChange}/>
-                <input name={this.props.payLocation} style={{width: 200, borderRadius: 5}} type='text' placeholder= 'Where did you buy it?' onChange={this.handleChange} ></input>
+                <input name='itemBought' style={{width: 200, borderRadius: 5,}} type= 'text' placeholder='What did you buy?' onChange={this.handleChange}/>
+                <input name='payLocation' style={{width: 200, borderRadius: 5}} type='text' placeholder= 'Where did you buy it?' onChange={this.handleChange} ></input>
                 <input name='amountSpent' style={{width: 200, borderRadius: 5}} type='number' placeholder='How much did you spend?' onChange={this.handleChange} ></input>
                 <input name='dateOfPurchase' style={{borderRadius: 5}} type='date' onChange={this.handleChange} />
                 <input style={{width: 100, borderRadius: 5}} type='submit'></input>
