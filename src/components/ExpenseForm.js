@@ -1,41 +1,49 @@
 import React from 'react'
 
 class ExpenseForm extends React.Component {
-    constructor(props) {
-        super(props)
-    this.state = {
-        payType: '',
-        itemBought: '',
-        payLocation: '',
-        amountSpent: '',
-        dateOfPurchase: '',
-    }
-    this.handleChange = this.handleChange.bind(this);
-
-}
-handleChange(e) {
-    this.setState({
-        [e.target.name]: e.target.value,
-    })
-}
-
-
     render() {
-        console.log(this.state);
         return (
             <div>
-            <form className = 'expense-form'>
-                <select name='payType' id='payment-type' style={{borderRadius: 5}} onChange={this.handleChange} >
-                    <option value=''>Select Payment Type</option>
-                    <option value='cash'>Cash</option>
-                    <option value='credit card'>Credit Card</option>
-                    <option value='crypto'>Crypto</option>
+            <form className = 'expense-form' onSubmit={this.props.handleSubmit}>
+                <select 
+                    name='payType' 
+                    id='payment-type' 
+                    style={{borderRadius: 5}} 
+                    onChange={this.props.handleChange} 
+                    >
+                        <option value=''>Select Payment Type</option>
+                        <option value='cash'>Cash</option>
+                        <option value='credit card'>Credit Card</option>
+                        <option value='crypto'>Crypto</option>
                 </select>
-                <input name='itemBought' style={{width: 200, borderRadius: 5,}} type= 'text' placeholder='What did you buy?' onChange={this.handleChange}/>
-                <input name='payLocation' style={{width: 200, borderRadius: 5}} type='text' placeholder= 'Where did you buy it?' onChange={this.handleChange} ></input>
-                <input name='amountSpent' style={{width: 200, borderRadius: 5}} type='number' placeholder='How much did you spend?' onChange={this.handleChange} ></input>
-                <input name='dateOfPurchase' style={{borderRadius: 5}} type='date' onChange={this.handleChange} />
-                <input style={{width: 100, borderRadius: 5}} type='submit'></input>
+                <input 
+                    name='itemBought' 
+                    style={{width: 200, borderRadius: 5,}} 
+                    type= 'text' 
+                    placeholder='What did you buy?' 
+                    onChange={this.props.handleChange}
+                    />
+                <input 
+                    name='payLocation' 
+                    style={{width: 200, borderRadius: 5}} 
+                    type='text' 
+                    placeholder= 'Where did you buy it?' 
+                    onChange={this.props.handleChange} ></input>
+                <input 
+                    name='amountSpent' 
+                    style={{width: 200, borderRadius: 5}} 
+                    type='number' 
+                    placeholder='How much did you spend?' 
+                    onChange={this.props.handleChange} ></input>
+                <input 
+                    name='dateOfPurchase' 
+                    style={{borderRadius: 5}} 
+                    type='date' 
+                    onChange={this.props.handleChange} 
+                    />
+                <input 
+                    style={{width: 100, borderRadius: 5}} 
+                    type='submit'></input>
             </form>
         </div>
         )
