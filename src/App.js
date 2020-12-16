@@ -33,6 +33,7 @@ class App extends React.Component {
 
         expenses.push({
           payType: this.state.payType,
+          itemBought: this.state.itemBought,
           payLocation: this.state.payLocation,
           amountSpent: this.state.amountSpent,
           dateOfPurchase: this.state.dateOfPurchase,
@@ -64,7 +65,7 @@ class App extends React.Component {
           newPayLocation={this.state.payLocation}
           newAmountSpent={this.state.amountSpent}
           newDateOfPurchase={this.state.dateOfPurchase}
-          expenses
+          removeExpense={this.state.delete}
         />
         <ExpenseTable expenses={this.state.expenses} />
       </div>

@@ -22,6 +22,7 @@ class ExpenseForm extends React.Component {
                     style={{width: 200, borderRadius: 5,}} 
                     type= 'text' 
                     placeholder='What did you buy?' 
+                    value={this.props.newItemBought}
                     onChange={this.props.handleChange}
                     />
                 <input 
@@ -29,17 +30,20 @@ class ExpenseForm extends React.Component {
                     style={{width: 200, borderRadius: 5}} 
                     type='text' 
                     placeholder= 'Where did you buy it?' 
+                    value={this.props.newPayLocation}
                     onChange={this.props.handleChange} ></input>
                 <input 
                     name='amountSpent' 
                     style={{width: 200, borderRadius: 5}} 
                     type='number' 
                     placeholder='How much did you spend?' 
+                    value={this.props.newAmountSpent}
                     onChange={this.props.handleChange} ></input>
                 <input 
                     name='dateOfPurchase' 
                     style={{borderRadius: 5}} 
                     type='date' 
+                    value={this.props.newDateOfPurchase}
                     onChange={this.props.handleChange} 
                     />
                 <input 
