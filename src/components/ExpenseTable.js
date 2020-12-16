@@ -1,9 +1,9 @@
 import React from 'react'
-// import ExpenseForm from './components/ExpenseForm' //! not working??
 
 
-function ExpenseTable() {
-
+class ExpenseTable extends React.Component {
+    render() {
+        const expenses = this.props.expenses
     return (
         <div className='table'>
             <table className='table-data'>
@@ -17,17 +17,17 @@ function ExpenseTable() {
                 </tr>
                 </thead>
                 <tbody>
-                    <tr id='table-data'></tr>
-                    <tr>
-                        <td>dummy data</td>
-                        <td>dummy data</td>
-                        <td>dummy data</td>
-                        <td>dummy data</td>
-                    </tr>
+                    {expenses.map(expense => {
+                        return(
+                            <tr>
+                                <td>{expenses.payType}</td>
+                            </tr>
+                        )
+                    })}
                 </tbody>
             </table>
         </div>
     )
 }
-
+}
 export default ExpenseTable

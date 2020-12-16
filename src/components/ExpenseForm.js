@@ -9,6 +9,7 @@ class ExpenseForm extends React.Component {
                     name='payType' 
                     id='payment-type' 
                     style={{borderRadius: 5}} 
+                    value={this.props.newPayType}
                     onChange={this.props.handleChange} 
                     >
                         <option value=''>Select Payment Type</option>
