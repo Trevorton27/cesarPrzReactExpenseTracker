@@ -20,7 +20,7 @@ class ExpenseTable extends React.Component {
                     {expenses.map(expense => {
                         return(
                             <tr>
-                                <td>{expenses.payType}</td>
+                                <td>{expense.payType}</td>
                             </tr>
                         )
                     })}
