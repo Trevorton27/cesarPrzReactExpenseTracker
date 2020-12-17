@@ -9,13 +9,16 @@ class ExpenseTable extends React.Component {
             <table className='table-data'>
                 <thead>
                 <tr>
-                    <th>Expense Log</th>
+                    <th>Payment</th>
+                    <th>Item</th>
+                    <th>Location</th>
+                    <th>Cost</th>
+                    <th>Date</th>
+                    <th>Remove</th>
                 </tr>
                 </thead>
-            </table>
-            <table className='expense-table-data'>
                 <tbody>
-                    {expenses.map((expense, i) => {
+                    {expenses.map(expense => {
                         return(
                             <tr key={expense.id} >
                                 <td> {expense.payType} </td>
