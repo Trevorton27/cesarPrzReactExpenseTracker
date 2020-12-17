@@ -11,6 +11,7 @@ class ExpenseForm extends React.Component {
                     style={{borderRadius: 5}} 
                     value={this.props.newPayType}
                     onChange={this.props.handleChange} 
+                    required
                     >
                         <option value=''>Select Payment Type</option>
                         <option value='cash'>Cash</option>
@@ -24,6 +25,7 @@ class ExpenseForm extends React.Component {
                     placeholder='What did you buy?' 
                     value={this.props.newItemBought}
                     onChange={this.props.handleChange}
+                    required
                     />
                 <input 
                     name='payLocation' 
@@ -31,20 +33,25 @@ class ExpenseForm extends React.Component {
                     type='text' 
                     placeholder= 'Where did you buy it?' 
                     value={this.props.newPayLocation}
-                    onChange={this.props.handleChange} ></input>
+                    onChange={this.props.handleChange}
+                    required
+                    />
                 <input 
                     name='amountSpent' 
                     style={{width: 200, borderRadius: 5}} 
                     type='number' 
                     placeholder='How much did you spend?' 
                     value={this.props.newAmountSpent}
-                    onChange={this.props.handleChange} ></input>
+                    onChange={this.props.handleChange} 
+                    required
+                    />
                 <input 
                     name='dateOfPurchase' 
                     style={{borderRadius: 5}} 
                     type='date' 
                     value={this.props.newDateOfPurchase}
                     onChange={this.props.handleChange} 
+                    required
                     />
                 <input 
                     style={{width: 100, borderRadius: 5}} 
