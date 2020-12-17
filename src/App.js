@@ -18,6 +18,7 @@ class App extends React.Component {
       }
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleDelete = this.handleDelete.bind(this);
 
       }
       handleChange(e) {
@@ -48,9 +49,15 @@ class App extends React.Component {
         dateOfPurchase: '',
         expenses
         })
-        
-    console.log(this.expenses)
       }
+
+      handleDelete(i) {
+        let expenseRows = [...this.state.expenses]
+          expenseRows.splice(i,1) 
+          this.setState({
+            expenses: expenseRows
+          })
+        }
 
   render() {
     console.log(this.state)
@@ -67,7 +74,7 @@ class App extends React.Component {
           newDateOfPurchase={this.state.dateOfPurchase}
           removeExpense={this.state.delete}
         />
-        <ExpenseTable expenses={this.state.expenses} />
+        <ExpenseTable handleDelete={this.handleDelete} expenses={this.state.expenses} />
       </div>
     );
   }
