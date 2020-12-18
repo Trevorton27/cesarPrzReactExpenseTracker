@@ -4,8 +4,9 @@ function Header() {
 
     return (
         <div>
-            <h1>Expense Tracker</h1>
-            <p>Use the form below to log your expenses</p>
+            <div className='jumbotron text-center'>
+                <h1 className='display-3'>Expense Tracker</h1>
+            </div>
         </div>
     )
 }

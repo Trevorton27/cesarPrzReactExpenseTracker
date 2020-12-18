@@ -1,8 +1,12 @@
-/* .App {
+.App {
 	text-align: center;
 }
 
-.expense-tableData {
+.jumbotron {
+	height: 200px;
+}
+
+/*.expense-tableData {
 	color: white;
 }
 

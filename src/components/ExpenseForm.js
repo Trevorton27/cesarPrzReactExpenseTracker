@@ -4,61 +4,77 @@ class ExpenseForm extends React.Component {
     render() {
         return (
             <div className='container'>
-                <div className='column'>
-                    <form onSubmit={this.props.handleSubmit}>
-                        <select 
-                            className='form-control col-6'
-                            name='payType' 
-                            id='payment-type'
-                            value={this.props.newPayType}
-                            onChange={this.props.handleChange} 
-                            required
-                            >
-                                <option value=''>Select Payment Type</option>
-                                <option value='cash'>Cash</option>
-                                <option value='credit card'>Credit Card</option>
-                                <option value='crypto'>Crypto</option>
-                        </select>        
-                        <input 
-                            className='form-control col-6'
-                            name='itemBought'
-                            type= 'text' 
-                            placeholder='What did you buy?' 
-                            value={this.props.newItemBought}
-                            onChange={this.props.handleChange}
-                            required
+                <form onSubmit={this.props.handleSubmit}>
+                    <div className='form-row'>
+                        <div className='form-group col'>
+                            <select className='form-control'
+                                name='payType' 
+                                id='payment-type'
+                                value={this.props.newPayType}
+                                onChange={this.props.handleChange} 
+                                required
+                                >
+                                    <option value=''>Payment</option>
+                                    <option value='Cash'>Cash</option>
+                                    <option value='Credit Card'>Credit Card</option>
+                                    <option value='Crypto'>Crypto</option>
+                                    <option value='Other'>Other</option>
+                            </select>
+                        </div>
+                        <div className='form-group col'>
+                            <input 
+                                className='form-control'
+                                name='dateOfPurchase' 
+                                type='date' 
+                                value={this.props.newDateOfPurchase}
+                                onChange={this.props.handleChange} 
+                                required
                             />
-                        <input 
-                            className='form-control col-6'
-                            name='payLocation'
-                            type='text' 
-                            placeholder= 'Where did you buy it?' 
-                            value={this.props.newPayLocation}
-                            onChange={this.props.handleChange}
-                            required
+                        </div>
+                        <div className='form-group col'>
+                            <input 
+                                className='form-control'
+                                name='amountSpent' 
+                                type='number' 
+                                placeholder='How much did you spend?' 
+                                value={this.props.newAmountSpent}
+                                onChange={this.props.handleChange} 
+                                required
                             />
-                        <input 
-                            className='form-control col-6'
-                            name='amountSpent' 
-                            type='number' 
-                            placeholder='How much did you spend?' 
-                            value={this.props.newAmountSpent}
-                            onChange={this.props.handleChange} 
-                            required
-                            />
-                        <input 
-                            className='form-control col-6'
-                            name='dateOfPurchase' 
-                            type='date' 
-                            value={this.props.newDateOfPurchase}
-                            onChange={this.props.handleChange} 
-                            required
-                            />
-                        <input
-                            type='submit' className='btn btn-primary form-control col-6'></input>  
+                        </div>
+                    </div>
+                    <div className='form-row'>
+                        <div className='form-group col'>
+                            <input 
+                                className='form-control '
+                                name='itemBought'
+                                type= 'text' 
+                                placeholder='What did you buy?' 
+                                value={this.props.newItemBought}
+                                onChange={this.props.handleChange}
+                                required
+                                />
+                        </div>
+                        <div className='form-group col'>
+                            <input 
+                                className='form-control'
+                                name='payLocation'
+                                type='text' 
+                                placeholder= 'Where did you buy it?' 
+                                value={this.props.newPayLocation}
+                                onChange={this.props.handleChange}
+                                required
+                                />
+                        </div>
+                    </div>
+                    <div className='form-group col'>
+                        <div className='text-center'>
+                            <input
+                                type='submit' className='btn btn-primary btn-lg' />
+                            </div>
+                    </div>
                 </form>
             </div>
-        </div>
         )
     }
 }
