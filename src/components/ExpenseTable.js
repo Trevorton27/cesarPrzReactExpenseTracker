@@ -22,7 +22,7 @@ class ExpenseTable extends React.Component {
                         return(
                             <tr key={expense.id} >
                                 <td> {expense.payType} </td>
-                                <td> {expense.itemPurchased} </td>
+                                <td> {expense.itemBought} </td>
                                 <td> {expense.payLocation} </td>
                                 <td> ${expense.amountSpent} </td>
                                 <td> {expense.dateOfPurchase} </td>

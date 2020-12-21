@@ -21,6 +21,26 @@ class App extends React.Component {
       this.handleDelete = this.handleDelete.bind(this);
 
       }
+    componentDidMount() {
+      try {
+        const json = localStorage.getItem('expenses');
+        const expenses = JSON.parse(json);
+        if(expenses) {
+          this.setState(() => ({expenses}));
+        }
+      } catch (error) {
+
+      }
+    }
+
+      componentDidUpdate(prevProps, prevState) {
+        if(prevState.expenses.length !== this.state.expenses.length) {
+          const json = JSON.stringify(this.state.expenses);
+          localStorage.setItem('expenses', json)
+
+        }
+      }
+
       handleChange(e) {
       this.setState({
           [e.target.name]: e.target.value,
