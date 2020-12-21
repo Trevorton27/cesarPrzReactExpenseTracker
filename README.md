@@ -21,7 +21,7 @@ Check it out [here]
 # Summary 
 
 This Expense Tracker was my first app using React and I really learned a lot building this application. Learning the basics of React really laid out the groundwork to create  
-bigger and more complex projects. Mainly learning how React components interact with each other and how State is such an important aspect of React. To understand and it makes 
+bigger and more complex projects. Mainly learning how React components interact with each other and how State is such an important aspect of React. To understand State makes 
 a dynamic website more fluid also makes reading the code much more manageable in turn, easier to maintain. Making this app was a fun challenge and it caused me to think differently about how an application works.  
 
 # Author 
