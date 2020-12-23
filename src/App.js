@@ -38,8 +38,9 @@ class App extends React.Component {
   }
 
   handleChange(e) {
+    const { name, value } = e.target;
     this.setState({
-      [e.target.name]: e.target.value
+      [name]: value
     });
   }
 
@@ -57,6 +58,9 @@ class App extends React.Component {
     this.setState({
       expenses: [...this.state.expenses, newExpense]
     });
+    Array.from(document.querySelectorAll('input')).forEach(
+      (input) => (input.value = '')
+    );
   }
 
   handleDelete(i) {
