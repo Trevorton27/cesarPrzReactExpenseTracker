@@ -27,7 +27,7 @@ const ExpenseTable = (props) => {
                 <td>
                   <button
                     className='btn btn-danger btn-sm'
-                    onClick={(i) => props.handleDelete(i)}
+                    onClick={() => props.handleDelete(expense.id)}
                   >
                     X
                   </button>

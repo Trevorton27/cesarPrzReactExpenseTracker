@@ -21,13 +21,11 @@ class App extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
   }
   componentDidMount() {
-    try {
-      const json = localStorage.getItem('expenses');
-      const expenses = JSON.parse(json);
-      if (expenses) {
-        this.setState(() => ({ expenses }));
-      }
-    } catch (error) {}
+    const json = localStorage.getItem('expenses') || [];
+    const expenses = JSON.parse(json);
+    if (expenses) {
+      this.setState(() => ({ expenses }));
+    }
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -48,6 +46,7 @@ class App extends React.Component {
     e.preventDefault();
 
     const newExpense = {
+      id: Number(Math.floor(new Date().getTime() * Math.random())),
       payType: this.state.payType,
       itemBought: this.state.itemBought,
       payLocation: this.state.payLocation,
@@ -56,31 +55,39 @@ class App extends React.Component {
     };
 
     this.setState({
-      expenses: [...this.state.expenses, newExpense]
+      expenses: [...this.state.expenses, newExpense],
+      payType: '',
+      itemBought: '',
+      payLocation: '',
+      amountSpent: '',
+      dateOfPurchase: ''
     });
-    Array.from(document.querySelectorAll('input')).forEach(
-      (input) => (input.value = '')
-    );
-
     this.setState({ payType: 'payment' });
   }
 
-  handleDelete(i) {
-    let expenseRows = [...this.state.expenses];
-    expenseRows.splice(i, 1);
+  handleDelete(id) {
+    let filteredExpenses = this.state.expenses.filter(
+      (expense) => expense.id !== id
+    );
+
     this.setState({
-      expenses: expenseRows
+      expenses: filteredExpenses
     });
   }
 
   render() {
-    console.log(this.state);
     return (
       <div className='App'>
         <Header />
         <ExpenseForm
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
+          newPayType={this.state.payType}
+          newItemBought={this.state.itemBought}
+          newPayLocation={this.state.payLocation}
+          newAmountSpent={this.state.amountSpent}
+          newDateOfPurchase={this.state.dateOfPurchase}
+          removeExpense={this.state.delete}
         />
         <ExpenseTable
           handleDelete={this.handleDelete}
