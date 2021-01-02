@@ -61,6 +61,8 @@ class App extends React.Component {
     Array.from(document.querySelectorAll('input')).forEach(
       (input) => (input.value = '')
     );
+
+    this.setState({ payType: 'payment' });
   }
 
   handleDelete(i) {
